@@ -40,7 +40,7 @@ func TestArticleUnauthenticated(t *testing.T) {
 	r := getRouter(true)
 
 	// Define the route similar to its definition in the routes file
-	r.GET("/article/view:article_id", getArticle)
+	r.GET("/article/view/:article_id", getArticle)
 
 	// Create a request to send to the above route
 	req, _ := http.NewRequest("GET", "/article/view/1", nil)
